@@ -1,6 +1,6 @@
 # Financial-Analysis-of-Stock-Market
 
-Discription
+# Discription
 
 I would like to implement a model  Financial Analysis of Stock Market based on Data Science. I try to implement a simple model based on the Kaggle Dataset. 
 
@@ -8,14 +8,19 @@ The objective of this model is   to identify stocks  who are likely to change da
 
 Stocks prediction model in stock market Recommendation on how to set up a  model for a finance company.
 
-PROJECT  MONITORING  SYSTEM
+
+# PROJECT  MONITORING  SYSTEM
+
 ![project moniter](https://user-images.githubusercontent.com/103837009/208219367-ec1a3cba-bbac-4d6c-9cf9-de85f493c54b.jpg)
 
-DATABASE DESIGN:
+# DATABASE DESIGN:
 Projects database design consist of excel sheets and csv files which are known as datasets in data science. There are 2 datasets used in making of this project.
+
+
 ![database](https://user-images.githubusercontent.com/103837009/208219405-fc466597-01d5-4d85-821e-a40ecbbe8227.png)
 
-Imported Files:
+
+# Imported Files:
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
