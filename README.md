@@ -22,13 +22,21 @@ Projects database design consist of excel sheets and csv files which are known a
 
 # Imported Files:
 import pandas as pd
+
 import numpy as np
+
 import matplotlib.pyplot as plt
+
 %matplotlib inline
+
 import seaborn as ns
+
 import pandas_datareader
+
 import datetime
+
 import warnings
+
 warnings.filterwarnings("ignore")
 
 plt.style.use("seaborn-whitegrid")
