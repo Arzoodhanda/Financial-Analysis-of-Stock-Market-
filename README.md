@@ -1,1 +1,1 @@
-# Financial-Analysis-of-Stock-Market-
+# Financial-Analysis-of-Stock-Market
