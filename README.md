@@ -144,14 +144,49 @@ plt.show()
 ![for shopify](https://user-images.githubusercontent.com/103837009/208219978-bd5f7d1d-4176-4f9a-81b5-0be360e00a63.png)
 
 #  For Shopify
+%matplotlib notebook
+
+shop_jan19= shop.loc["2020-01"].reset_index()
+shop_jan19["Dat_ax"] = shop_jan19["Date"].apply(lambda data: date2num(data))
+
+list_of_col = ["Dat_ax","Open","High","Low","Close"]
+dayFormatter = DateFormatter("%d")
+shop_value = [tuple(x) for x in shop_jan19[list_of_col].values]
+mondays = WeekdayLocator(MONDAY)
+alldays = DateLocator()
+weekFormatter = DateFormatter("%b %d") #eg jan 12
+dayFormatter = DateFormatter("%d")
+
+fig,ax = plt.subplots()
+fig.subplots_adjust(bottom=0.2)
+ax.xaxis.set_major_locator(mondays)
+ax.xaxis.set_minor_locator(alldays)
+ax.xaxis.set_major_formatter(weekFormatter)
+candlestick_ohlc(ax,shop_value,width=0.6,colorup="g",colordown='r')
+plt.show()
+
+![4](https://user-images.githubusercontent.com/103837009/208220948-11b09536-fe77-4370-8925-828b42c23e2e.png)
+
+# Histogram for Returning stock
+shop["Return"] = shop["Close"].pct_change(1)
+jd["Return"] = jd["Close"].pct_change(1)
+alibaba["Return"] = alibaba["Close"].pct_change(1)
+shop["Return"].hist(bins=31)
 
 
 # Scatter plot using Box plot
+from pandas.plotting import scatter_matrix
+scatter_matrix(box_df)
 
 ![Scatter plot using Box plot](https://user-images.githubusercontent.com/103837009/208220072-8953eb51-1d4e-4e7c-9389-8e6fad92adf2.png)
 
+box_df.plot(kind="scatter",x="shopify Return",y="Alibaba Return",figsize=(10,8),alpha=0.5)
 
 
 # Scatter plot of Alibaba stock company for return stock
+box_df.plot(kind="scatter",x="shopify Return",y="JD return",figsize=(10,8),alpha=0.5)
 
 ![Scatter plot of Alibaba stock company for return stock](https://user-images.githubusercontent.com/103837009/208220014-b5f21c36-4518-474e-870b-6f304e7ab26f.png)
+
+
+Finally we got the result of Market Trend
